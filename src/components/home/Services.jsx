@@ -1,4 +1,4 @@
-import services from "../../data/servicesData";
+import services from "../../data/ServicesData";
 import {
   FaMobileAlt,
   FaBatteryHalf,
