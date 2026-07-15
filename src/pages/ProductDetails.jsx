@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link,useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
@@ -43,18 +43,18 @@ function ProductDetails() {
     navigate("/login", {
       state: {
         product,
-        from: "/payment",
+        from: "/product-payment",
       },
     });
 
     return;
   }
 
-  navigate("/payment", {
-    state: {
-      product,
-    },
-  });
+  navigate("/product-payment", {
+  state: {
+    product,
+  },
+});
 };
 
 
@@ -134,7 +134,7 @@ function ProductDetails() {
 
          <button
           onClick={handleBuyNow}
-          className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl"
+          className="mt-8 bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700"
         >
           Buy Now
         </button>

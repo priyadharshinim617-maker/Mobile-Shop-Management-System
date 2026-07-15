@@ -34,7 +34,7 @@ function BookingService() {
   const handleSubmit = (e) => {
   e.preventDefault();
 
-  navigate("/payment");
+  navigate("/service-payment");
 };
     const navigate = useNavigate();
   return (

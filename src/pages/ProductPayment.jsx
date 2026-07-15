@@ -2,10 +2,22 @@ import Navbar from "../components/layout/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLocation} from "react-router-dom";
-function Payment() {
+function ProductPayment() {
   const navigate = useNavigate();
   const location = useLocation();
   const product = location.state?.product;
+  if (!product) {
+  return (
+    <>
+      <Navbar />
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-3xl font-bold">
+          No Product Selected
+        </h1>
+      </div>
+    </>
+  );
+}
 
   const [paymentMethod, setPaymentMethod] = useState("");
     const [upiId, setUpiId] = useState("");
@@ -42,7 +54,7 @@ function Payment() {
         }
 
         alert("Payment Successful!");
-        navigate("/booking-success");
+       navigate("/order-success");
         };
 
   return (
@@ -182,7 +194,7 @@ function Payment() {
               />
 
               <span className="ml-3 font-medium">
-                Cash on Service
+                Cash on Delivery
               </span>
 
             </label>
@@ -203,4 +215,4 @@ function Payment() {
   );
 }
 
-export default Payment;
+export default ProductPayment;
